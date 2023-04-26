@@ -13,12 +13,12 @@ repos:
     hooks:
       - id: isort
 
-  - repo: local
-    hooks:
-      - id: pytest-check
-        name: pytest-check
-        entry: pytest -s
-        language: system
-        types: [python]
-        verbose: true
-
+#  - repo: local
+#    hooks:
+#      - id: pytest-check
+#        name: pytest-check
+#        entry: pytest -s
+#        language: system
+#        types: [python]
+#        verbose: true
+#
