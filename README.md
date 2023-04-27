@@ -1,3 +1,8 @@
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+![Python](https://img.shields.io/badge/python-3.8.10-blue)
+
+
 # streamingchat
 
 
@@ -26,7 +31,6 @@
 - [ ] 가장 많이 나온 단어
 - [ ] 나온 채팅들의 감정 표현(재미, 분노 등등?)
 - [ ] 작성자 수
-- [ ] 
 
 ---
 
