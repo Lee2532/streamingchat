@@ -22,11 +22,7 @@ class TwitchChat:
 
     def __init__(self, channel: str):
         self.channel = channel
-        # self.conf = {
-        #     "bootstrap.servers": constants.BOOTSTRAPSERVER,
-        #     "client.id": constants.CLIENTID,
-        # }
-        # self.producer = Producer(self.conf)
+        self.topic = self.channel.split("/")[-1]
         schema_registry = CachedSchemaRegistryClient(
             {"url": constants.SCHEMA_REGISTRY_URL}
         )
@@ -91,7 +87,7 @@ class TwitchChat:
                     }
 
                     self.producer.produce(
-                        topic=constants.TOPIC,
+                        topic=self.topic,
                         value=asdict(CHATMODEL(**msg)),
                         value_schema=CHATMODEL.schema,
                     )
