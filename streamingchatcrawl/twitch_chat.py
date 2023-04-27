@@ -2,7 +2,6 @@
 트위치 웹드라이버를 통한 데이터 수집 (API는 미사용)
 입력한 채널 기반으로 여러개의 웹드라이버를 띄워서 수집
 """
-import json
 import logging
 import time
 from dataclasses import asdict
@@ -16,9 +15,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 import constants
 from streamingchatcrawl.models.ChatModel import CHATMODEL
-
-# from uuid import uuid4
-# from confluent_kafka import Producer
 
 
 class TwitchChat:

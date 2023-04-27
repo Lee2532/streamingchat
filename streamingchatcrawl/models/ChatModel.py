@@ -1,8 +1,6 @@
-import json
-from dataclasses import asdict, dataclass, field
-from datetime import datetime
+from dataclasses import dataclass
 
-from confluent_kafka import Consumer, Producer, avro
+from confluent_kafka import avro
 
 
 @dataclass
