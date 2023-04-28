@@ -17,7 +17,14 @@ class CONNECTIONDB:
             return cur.fetchall()
 
     def total_chat_message(self):
+        """가장 많이 나온 단어"""
         query = open("dashboard/sqls/total_chat_message.sql").read()
+        rows = self.run_query(query)
+        return rows
+
+    def total_author_message(self):
+        """가장 많은 채팅을 작성한 유저"""
+        query = open("dashboard/sqls/total_author_message.sql").read()
         rows = self.run_query(query)
         return rows
 
