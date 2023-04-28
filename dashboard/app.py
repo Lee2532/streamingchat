@@ -13,7 +13,19 @@ channel = st.selectbox("방송 채널을 선택해주세요", ("silphtv", "hando
 
 st.write("선택한 채널 : ", channel)
 
+if st.button("Clear All"):
+    st.cache_resource.clear()
+
 conn_db = CONNECTIONDB()
+
+channel_message_total = conn_db.message_count_chennel_message()
+channel_message_total_list: List[MESSAGECOUNTMODEL] = [
+    MESSAGECOUNTMODEL(*item) for item in channel_message_total
+]
+
+channel_message_total_df = pd.DataFrame([vars(i) for i in channel_message_total_list])
+
+st.bar_chart(channel_message_total_df, x="channel", y="count")
 
 total_message_list = conn_db.total_chat_message(channel)
 author_data = conn_db.total_author_message(channel)
@@ -27,8 +39,7 @@ total_auth_list: List[TOTALAUTHORHMODEL] = [
 # dataclass 리스트를 DataFrame으로 변환
 total_message_df = pd.DataFrame([vars(i) for i in data_list])
 total_auth_df = pd.DataFrame([vars(i) for i in total_auth_list])
-
 st.dataframe(total_message_df[:50])
+st.bar_chart(data=total_message_df[:50], x="message", y="total")
 st.dataframe(total_auth_df[:50])
-
-st.bar_chart(total_auth_df[:50])
+st.bar_chart(data=total_auth_df[:50], x="nickname", y="total")

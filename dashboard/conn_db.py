@@ -36,6 +36,13 @@ class CONNECTIONDB:
         rows = self.run_query(query)
         return rows
 
+    def message_count_chennel_message(self):
+        """채널별 채팅 수 통계"""
+        sql = open("dashboard/sqls/message_count.sql").read()
+        query = Template(sql).substitute()
+        rows = self.run_query(query)
+        return rows
+
     def list_to_df(self, data, model):
         df = pd.DataFrame(data)
         return df
