@@ -46,23 +46,6 @@ class TwitchChat:
         logging.info("Webdriver open")
         return driver
 
-    def _duduplication(self, before_list: list, after_list: list) -> list:
-        """중복제거, 이전 메시지의 가장 마지막 메시지를 기반으로, 새로온 메시지 리스트중 중복 체크 후 그 이후것만 가져옴"""
-        try:
-            last_msg = before_list[-1]
-        except Exception as e:
-            return after_list
-
-        max_num = 0
-        for i in range(len(after_list)):
-            if (
-                last_msg["user_id"] == after_list[i]["user_id"]
-                and last_msg["nickname"] == after_list[i]["nickname"]
-                and last_msg["message"] == after_list[i]["message"]
-            ):
-                max_num = i + 1
-        return after_list[max_num:]
-
     def twitch_chat(self):
         driver = self._webdriver()
         driver.get(self.channel)
@@ -98,4 +81,4 @@ class TwitchChat:
 
 
 if __name__ == "__main__":
-    TwitchChat("https://www.twitch.tv/silphtv").twitch_chat()
+    TwitchChat("https://www.twitch.tv/handongsuk").twitch_chat()
