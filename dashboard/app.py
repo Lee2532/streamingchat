@@ -15,7 +15,6 @@ channel = st.selectbox(
         "airikanna_stellive",
         "handongsuk",
         "runner0608",
-        "school",
         "silphtv",
         "tmxk319",
         "woowakgood",
