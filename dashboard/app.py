@@ -9,7 +9,18 @@ from models.message_model import *
 st.title("Hello Streamlit")
 
 
-channel = st.selectbox("방송 채널을 선택해주세요", ("silphtv", "handongsuk", "tmxk319"))
+channel = st.selectbox(
+    "방송 채널을 선택해주세요",
+    (
+        "airikanna_stellive",
+        "handongsuk",
+        "runner0608",
+        "school",
+        "silphtv",
+        "tmxk319",
+        "woowakgood",
+    ),
+)
 
 st.write("선택한 채널 : ", channel)
 
