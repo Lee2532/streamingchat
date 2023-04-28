@@ -30,6 +30,11 @@ streamlit run .\dashboard\app.py
 주소 : http://localhost:8501/ 
 ```
 
+#### 채널별 채팅 수
+![채널별 채팅 수](images/total_channel_chat.png)
+
+### 가장 많이 나온 단어
+![가장 많이 나온 단어](images/total_chat.png)
 
 ---
 ## TODO
