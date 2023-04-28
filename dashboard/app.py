@@ -25,6 +25,7 @@ channel_message_total_list: List[MESSAGECOUNTMODEL] = [
 
 channel_message_total_df = pd.DataFrame([vars(i) for i in channel_message_total_list])
 
+# 채널별 채팅 수
 st.bar_chart(channel_message_total_df, x="channel", y="count")
 
 total_message_list = conn_db.total_chat_message(channel)
@@ -38,8 +39,18 @@ total_auth_list: List[TOTALAUTHORHMODEL] = [
 
 # dataclass 리스트를 DataFrame으로 변환
 total_message_df = pd.DataFrame([vars(i) for i in data_list])
+
+
+col1, col2 = st.columns(2)
+with col1:
+    st.dataframe(total_message_df[:50])
+with col2:
+    st.bar_chart(data=total_message_df[:50], x="message", y="total")
+
 total_auth_df = pd.DataFrame([vars(i) for i in total_auth_list])
-st.dataframe(total_message_df[:50])
-st.bar_chart(data=total_message_df[:50], x="message", y="total")
-st.dataframe(total_auth_df[:50])
-st.bar_chart(data=total_auth_df[:50], x="nickname", y="total")
+
+col1, col2 = st.columns(2)
+with col1:
+    st.dataframe(total_auth_df[:50])
+with col2:
+    st.bar_chart(data=total_auth_df[:50], x="nickname", y="total")
