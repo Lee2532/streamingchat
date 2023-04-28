@@ -25,3 +25,11 @@ class TOTALAUTHORHMODEL:
 
     nickname: str
     total: int
+
+
+@dataclass
+class MESSAGECOUNTMODEL:
+    """전체 채팅 수"""
+
+    nickname: str
+    total: int

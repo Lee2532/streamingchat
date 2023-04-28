@@ -1,3 +1,5 @@
+from string import Template
+
 import mysql.connector
 import pandas as pd
 import streamlit as st
@@ -16,15 +18,21 @@ class CONNECTIONDB:
             cur.execute(query)
             return cur.fetchall()
 
-    def total_chat_message(self):
+    def total_chat_message(self, channel):
         """가장 많이 나온 단어"""
-        query = open("dashboard/sqls/total_chat_message.sql").read()
+        sql = open("dashboard/sqls/total_chat_message.sql").read()
+        query = Template(sql).substitute(
+            channel=channel,
+        )
         rows = self.run_query(query)
         return rows
 
-    def total_author_message(self):
+    def total_author_message(self, channel):
         """가장 많은 채팅을 작성한 유저"""
-        query = open("dashboard/sqls/total_author_message.sql").read()
+        sql = open("dashboard/sqls/total_author_message.sql").read()
+        query = Template(sql).substitute(
+            channel=channel,
+        )
         rows = self.run_query(query)
         return rows
 
