@@ -53,9 +53,9 @@ total_message_df = pd.DataFrame([vars(i) for i in data_list])
 
 col1, col2 = st.columns(2)
 with col1:
-    st.dataframe(total_message_df[:50])
+    st.dataframe(total_message_df)
 with col2:
-    st.bar_chart(data=total_message_df[:50], x="message", y="total")
+    st.bar_chart(data=total_message_df, x="message", y="total")
 
 total_auth_df = pd.DataFrame([vars(i) for i in total_auth_list])
 
