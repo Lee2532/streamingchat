@@ -47,5 +47,8 @@ streamlit run .\dashboard\app.py
 - [ ] kafka 모니터링
 - [ ] 컨슈머 쪽에서 중복 제거 하는 로직
 - [ ] 순서를 보장하는 적재
+- [ ] schema registry를 이용한 테스트
+  - 스키마 변경 (SCHEMA_REGISTRY_SCHEMA_COMPATIBILITY_LEVEL)
+
 ---
 
