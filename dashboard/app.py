@@ -1,6 +1,5 @@
 from typing import List
 
-import lance
 import pandas as pd
 import streamlit as st
 from conn_db import CONNECTIONDB
@@ -18,6 +17,7 @@ channel = st.selectbox(
         "silphtv",
         "tmxk319",
         "woowakgood",
+        "zilioner",
     ),
 )
 
