@@ -27,7 +27,7 @@ class TwitchChat:
             {"url": constants.SCHEMA_REGISTRY_URL}
         )
         self.producer = AvroProducer(
-            {"bootstrap.servers": constants.BOOTSTRAPSERVER},
+            config=constants.KAFKA_CONFIG,
             schema_registry=schema_registry,
         )
 

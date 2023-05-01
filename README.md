@@ -42,13 +42,15 @@ streamlit run .\dashboard\app.py
 - [x] 총 채팅 수
 - [x] 가장 많이 채팅 한 사람
 - [x] 가장 많이 나온 단어
-- [ ] kafka 한번만 정확히 전송
-- [ ] 중복을 허용하는 전송
-- [ ] kafka 모니터링
+- [ ] kafka 한번만 정확히 전송 (acks = all)
+- [ ] kafka 모니터링 (그라파나, 프로메테우스)
 - [ ] 컨슈머 쪽에서 중복 제거 하는 로직
-- [ ] 순서를 보장하는 적재
+- [ ] 카프카 메시지 순서 보장
+  - 토픽에 하나의 파티션
+  - 하나의 컨슈머만 존재
+  - Key를 지정하여 전송
 - [ ] schema registry를 이용한 테스트
   - 스키마 변경 (SCHEMA_REGISTRY_SCHEMA_COMPATIBILITY_LEVEL)
-
+- [ ] Kafka SMT 적용하기
 ---
 
