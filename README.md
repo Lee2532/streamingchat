@@ -42,6 +42,8 @@ streamlit run .\dashboard\app.py
 - [x] 총 채팅 수
 - [x] 가장 많이 채팅 한 사람
 - [x] 가장 많이 나온 단어
+- [ ] helm chart로 infra 변경
+- [ ] 명령어 관련 sh 파일 작성
 - [ ] kafka 한번만 정확히 전송 (acks = all)
 - [ ] kafka 모니터링 (그라파나, 프로메테우스)
 - [ ] 컨슈머 쪽에서 중복 제거 하는 로직
