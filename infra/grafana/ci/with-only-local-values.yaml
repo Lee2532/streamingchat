@@ -1,0 +1,6 @@
+service:
+  enabled: true
+  type: LoadBalancer
+  port: 3000
+
+adminPassword: admin
