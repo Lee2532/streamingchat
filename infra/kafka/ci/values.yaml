@@ -1,0 +1,13 @@
+kafka:
+  enabled: true
+  externalAccess:
+    enabled: true
+    service:
+      type: LoadBalancer
+      domain: localhost
+    autoDiscovery:
+      enabled: true
+  serviceAccount:
+    create: true
+  rbac:
+    create: true
