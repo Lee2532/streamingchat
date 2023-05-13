@@ -1,0 +1,19 @@
+externalAccess:
+  enabled: true
+  service:
+    type: LoadBalancer
+    ports:
+      external: 9092
+    loadBalancerIPs:
+      - 127.0.0.1
+
+metrics:
+  kafka:
+    enabled: true
+  jmx:
+    enabled: true
+  serviceMonitor:
+    enabled: true
+
+zookeeper:
+  enabled: true
