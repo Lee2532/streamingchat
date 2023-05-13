@@ -14,6 +14,3 @@ metrics:
     enabled: true
   serviceMonitor:
     enabled: true
-
-zookeeper:
-  enabled: true
