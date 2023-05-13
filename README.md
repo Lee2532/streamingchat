@@ -37,6 +37,14 @@ streamlit run .\dashboard\app.py
 ![가장 많이 나온 단어](images/total_chat.png)
 
 ---
+# Grafana
+
+![카프카 대시보드](images/grafana-dashboard.png)
+
+
+
+
+---
 ## TODO
 - [x] 트위치 채팅 수집기 개발
 - [x] 총 채팅 수
@@ -57,6 +65,6 @@ streamlit run .\dashboard\app.py
   - [x] Grafana 세팅
     - [x] 로컬 배포를 위한 values 설정
     - [x] default username, password 변경
-    - [ ] Kafka 대시보드 만들기
+    - [x] Kafka 대시보드 만들기
 ---
 
