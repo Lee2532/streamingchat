@@ -26,6 +26,14 @@
 ## DASAHBOARD
 
 ```
+그라파나 주소 : http://localhost:3000/login
+admin / admin
+
+```
+
+
+
+```
 streamlit run .\dashboard\app.py
 주소 : http://localhost:8501/ 
 ```
