@@ -1,13 +1,8 @@
-kafka:
+externalAccess:
   enabled: true
-  externalAccess:
-    enabled: true
-    service:
-      type: LoadBalancer
-      domain: localhost
-    autoDiscovery:
-      enabled: true
-  serviceAccount:
-    create: true
-  rbac:
-    create: true
+  service:
+    type: LoadBalancer
+    ports:
+      external: 9092
+    loadBalancerIPs:
+      - 127.0.0.1
