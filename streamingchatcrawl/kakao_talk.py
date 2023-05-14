@@ -32,12 +32,37 @@ class KakaoTalk:
             print(str(self.basis_dt))
         return None
 
+    def _parser(self):
+        """chat parsing"""
+        pattern = r"\[([\w\s\-\[\]]+)\]\s*\[([\w\s:]+)\]\s*(.+)"
+
+        data = {}
+        match = re.match(pattern, self.row)
+        if match:
+            nickname = match.group(1)
+            date = match.group(2)
+            message = match.group(3)
+            data["nickname"] = nickname
+            data["date"] = date
+            data["message"] = message
+            data["basis_date"] = self.basis_dt
+
+            # print(f"Nickname: {nickname}")
+            # print(f"Date: {date}")
+            # print(f"Message: {message}")
+            print(data)
+        else:
+            print("No match found")
+            print(self.row)
+        return None
+
     def read_file(self):
         with open(self.file_path, "r", encoding="utf-8") as file:
             data = {}
             for row in file:
                 self.row = row
                 self.is_date_line()
+                self._parser()
 
 
 if __name__ == "__main__":
