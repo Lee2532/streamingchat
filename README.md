@@ -50,6 +50,12 @@ streamlit run .\dashboard\app.py
 ![카프카 대시보드](images/grafana-dashboard.png)
 
 
+---
+# infra 배포
+
+```
+sh build.sh
+```
 
 
 ---
@@ -59,7 +65,7 @@ streamlit run .\dashboard\app.py
 - [x] 가장 많이 채팅 한 사람
 - [x] 가장 많이 나온 단어
 - [x] helm chart로 infra 변경
-- [ ] 명령어 관련 sh 파일 작성
+- [x] 명령어 관련 sh 파일 작성
 - [x] kafka 한번만 정확히 전송 (acks = all)
 - [x] 컨슈머 쪽에서 중복 제거 하는 로직
 - [ ] 카프카 메시지 순서 보장
