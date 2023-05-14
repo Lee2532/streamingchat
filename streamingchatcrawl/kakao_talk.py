@@ -40,7 +40,7 @@ class KakaoTalk:
         누군가 입장, 퇴장했습니다 구분
         :return:
         """
-        entry_re = re.compile(".*님을 초대하였습니다.")
+        entry_re = re.compile(".*님이 들어왔습니다.")
         exit_re = re.compile(".*님이 나갔습니다.")
 
         if bool(re.search(entry_re, self.line)) or bool(re.search(exit_re, self.line)):
