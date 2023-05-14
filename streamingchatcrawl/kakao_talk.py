@@ -52,7 +52,8 @@ class KakaoTalk:
         메시지 분석하는 로직
         :return:
         """
-        pattern = r"\[([\w\s\-\[\]]+)\]\s*\[([\w\s:]+)\]\s*(.+)"
+
+        pattern = r"\[(.+?)\]\s*\[([\w\s:]+)\]\s*(.+)"
 
         messages = []
         current_message = None
