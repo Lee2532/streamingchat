@@ -6,6 +6,7 @@ create() {
   kubectl create namespace kafka
   kubectl create namespace grafana
   kubectl create namespace prometheus
+  kubectl create namespace kminion
 
   echo "install kafka"
   helm upgrade --install -f infra/kafka/ci/values.yaml -n kafka kafka infra/kafka/
@@ -16,10 +17,14 @@ create() {
   echo "install prometheus"
   helm upgrade --install -f infra/prometheus/ci/values.yaml -n prometheus prometheus infra/prometheus/
 
+  echo "install kminion"
+  helm upgrade --install -f infra/kminion/ci/values.yaml -n kminion kminion infra/kminion/
+
 }
 
 # Upgrade Command
 upgrade() {
+  echo "TODO UPDATE"
   # helm upgrade $RELEASE_NAME $CHART_NAME --namespace $NAMESPACE_NAME -f values.yaml
 }
 
