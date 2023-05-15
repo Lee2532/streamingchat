@@ -1,9 +1,10 @@
 """
 카카오톡 대화 내용
 """
-import os
 import re
 from datetime import datetime
+
+import pandas as pd
 
 
 class KakaoTalk:
@@ -47,7 +48,7 @@ class KakaoTalk:
             return True
         return False
 
-    def _parsing(self):
+    def _parsing(self) -> list:
         """
         메시지 분석하는 로직
         :return:
@@ -85,15 +86,16 @@ class KakaoTalk:
         if current_message:
             messages.append(current_message)
 
-        for msg in messages:
-            print(msg)
+        return messages
 
     def main(self):
         with open(self.file_path, "r", encoding="utf-8") as file:
             lines = file.readlines()
 
         self.lines = lines
-        self._parsing()
+        message_list = self._parsing()
+        message_df = pd.DataFrame(message_list)
+        message_df.to_csv("result.csv")
 
 
 if __name__ == "__main__":
