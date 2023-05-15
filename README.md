@@ -80,5 +80,6 @@ sh build.sh
     - [x] 로컬 배포를 위한 values 설정
     - [x] default username, password 변경
     - [x] Kafka 대시보드 만들기
+- [x] 카톡 메시지 파싱
 ---
 
